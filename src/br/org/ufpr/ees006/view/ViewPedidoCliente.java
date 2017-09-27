@@ -242,6 +242,7 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
       item = modelItemPedido.getItem(clickedLineItem);
       item.setQtdade( (Integer)modelItemPedido.getValueAt(clickedLineItem, 1));
       modelItemPedido.setValue(item);
+      modelItemPedido.fireTableCellUpdated(clickedLineItem, 1);
     }
   }//GEN-LAST:event_tableItensKeyPressed
 
