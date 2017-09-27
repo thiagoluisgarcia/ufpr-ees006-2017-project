@@ -1,5 +1,8 @@
 
 import br.org.ufpr.ees006.view.ViewCliente;
+import br.org.ufpr.ees006.view.ViewListarPedidoCliente;
+import br.org.ufpr.ees006.view.ViewPedidoCliente;
+import br.org.ufpr.ees006.view.ViewProduto;
 import javax.swing.JDialog;
 
 /*
@@ -60,6 +63,11 @@ public class SistemaPedido extends javax.swing.JFrame {
     jMenu1.add(jMenuItem1);
 
     jMenuItem2.setText("Manter Produto");
+    jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jMenuItem2ActionPerformed(evt);
+      }
+    });
     jMenu1.add(jMenuItem2);
 
     jMenuBar1.add(jMenu1);
@@ -67,6 +75,11 @@ public class SistemaPedido extends javax.swing.JFrame {
     jMenu2.setText("Listagem");
 
     jMenuItem3.setText("Listar Pedidos do Cliente");
+    jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jMenuItem3ActionPerformed(evt);
+      }
+    });
     jMenu2.add(jMenuItem3);
 
     jMenuBar1.add(jMenu2);
@@ -100,14 +113,28 @@ public class SistemaPedido extends javax.swing.JFrame {
   }// </editor-fold>//GEN-END:initComponents
 
   private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-    ViewCliente viewCliente = new ViewCliente();
-    viewCliente.setModal(true);
-    viewCliente.setVisible(true);
+    ViewCliente view = new ViewCliente();
+    view.setModal(true);
+    view.setVisible(true);
   }//GEN-LAST:event_jMenuItem1ActionPerformed
 
   private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
-    // TODO add your handling code here:
+    ViewPedidoCliente view = new ViewPedidoCliente();
+    view.setModal(true);
+    view.setVisible(true);
   }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+  private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+    ViewProduto view = new ViewProduto();
+    view.setModal(true);
+    view.setVisible(true);
+  }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+  private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    ViewListarPedidoCliente view = new ViewListarPedidoCliente();
+    view.setModal(true);
+    view.setVisible(true);
+  }//GEN-LAST:event_jMenuItem3ActionPerformed
 
   /**
    * @param args the command line arguments
