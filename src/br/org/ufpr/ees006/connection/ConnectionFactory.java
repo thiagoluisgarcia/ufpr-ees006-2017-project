@@ -27,6 +27,7 @@ public class ConnectionFactory {
       String password = properties.getProperty("password");
       
       return DriverManager.getConnection(url, username, password);
+      
     } catch (SQLException e) {
       e.printStackTrace();
       throw new RuntimeException(e);
