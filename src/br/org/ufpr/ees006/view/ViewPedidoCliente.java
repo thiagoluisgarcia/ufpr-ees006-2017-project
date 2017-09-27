@@ -5,13 +5,18 @@
  */
 package br.org.ufpr.ees006.view;
 
+import br.org.ufpr.ees006.DAO.ClienteDAO;
+import br.org.ufpr.ees006.DAO.PedidoDAO;
 import br.org.ufpr.ees006.DAO.ProdutoDAO;
+import br.org.ufpr.ees006.foundation.Cliente;
 import br.org.ufpr.ees006.foundation.ItemDoPedido;
+import br.org.ufpr.ees006.foundation.Pedido;
 import br.org.ufpr.ees006.foundation.Produto;
 import br.org.ufpr.ees006.model.ModelItemPedido;
 import br.org.ufpr.ees006.model.ModelProdutoTable;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.TableModel;
@@ -132,6 +137,11 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
     });
 
     btGravar.setText("Gravar");
+    btGravar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btGravarActionPerformed(evt);
+      }
+    });
 
     btSomar.setText("+");
     btSomar.addActionListener(new java.awt.event.ActionListener() {
@@ -292,6 +302,37 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
     }
     
   }//GEN-LAST:event_btSubtrairActionPerformed
+
+  private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
+
+    Date date = new Date();
+    ClienteDAO clienteDAO = new ClienteDAO();
+    Cliente cliente;
+    Pedido pedido = new Pedido();
+    PedidoDAO pedidoDAO = new PedidoDAO();
+    List<ItemDoPedido> itens;
+    
+    try {
+      
+      cliente = clienteDAO.getCliente(fieldCpf.getText());
+
+      pedido.setCliente(cliente);
+      pedido.setData(date);
+      
+      pedidoDAO.insert(pedido);
+            
+      itens = modelItemPedido.getItens();
+      
+      
+      clienteDAO.insert(cliente);
+
+    } catch (Exception ex) {
+
+      JOptionPane.showMessageDialog(null, "Erro ao inserir no banco de dados. E=" + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
+
+    }
+    
+  }//GEN-LAST:event_btGravarActionPerformed
 
   /**
    * @param args the command line arguments

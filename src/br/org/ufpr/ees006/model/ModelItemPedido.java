@@ -94,4 +94,8 @@ public class ModelItemPedido extends AbstractTableModel{
     return lista.get(linha);
   }
   
+  public List<ItemDoPedido> getItens() {
+    return lista;
+  }
+  
 }
