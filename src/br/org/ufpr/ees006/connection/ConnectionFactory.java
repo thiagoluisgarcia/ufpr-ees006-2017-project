@@ -14,20 +14,32 @@ import java.util.Properties;
  */
 public class ConnectionFactory {
 
+  private static Connection conn;
+  
   public static Connection getConnection() {
     try {
       
-      Properties properties = new Properties();
-      FileInputStream file = new FileInputStream("/config/config.properties");
-      properties.load(file);
-      file.close();
+      if ( conn == null ) {
       
-      String url = properties.getProperty("url");
-      String username = properties.getProperty("username");
-      String password = properties.getProperty("password");
+        Properties properties = new Properties();
+        FileInputStream file = new FileInputStream("/config/config.properties");
+        properties.load(file);
+        file.close();
+
+        String url = properties.getProperty("url");
+        String username = properties.getProperty("username");
+        String password = properties.getProperty("password");
+
+        conn = DriverManager.getConnection(url, username, password);
+
+        return conn;
       
-      return DriverManager.getConnection(url, username, password);
-      
+      } else {
+        
+        return conn;
+        
+      }
+        
     } catch (SQLException e) {
       e.printStackTrace();
       throw new RuntimeException(e);
