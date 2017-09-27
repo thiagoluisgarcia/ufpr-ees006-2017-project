@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+        <file>
+            <url>src/br/org/ufpr/ees006/ClienteDAO.java</url>
+            <bookmark id="1">
+                <name/>
+                <line>17</line>
+                <key/>
+            </bookmark>
+        </file>
+    </editor-bookmarks>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/foundation/ItemDoPedido.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/model/ModelPedidoCliente.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/view/ViewListarPedidoCliente.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/view/ViewCliente.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/view/ViewPedidoCliente.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/connection/ConnectionFactory.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/model/ModelProdutoTable.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/model/ModelItemPedido.java</file>
+            <file>file:/C:/Users/Thiago%20Luis%20Garcia/Documents/NetBeansProjects/TrabalhoDisciplinaEES0062017/src/br/org/ufpr/ees006/view/ViewProduto.java</file>
+        </group>
+    </open-files>
+</project-private>
