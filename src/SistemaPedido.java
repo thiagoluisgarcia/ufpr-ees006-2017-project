@@ -1,5 +1,6 @@
 
 import br.org.ufpr.ees006.view.ViewCliente;
+import javax.swing.JDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -100,6 +101,8 @@ public class SistemaPedido extends javax.swing.JFrame {
 
   private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
     ViewCliente viewCliente = new ViewCliente();
+    viewCliente.setModal(true);
+    viewCliente.setVisible(true);
   }//GEN-LAST:event_jMenuItem1ActionPerformed
 
   private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
@@ -117,7 +120,7 @@ public class SistemaPedido extends javax.swing.JFrame {
      */
     try {
       for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-        if ("Nimbus".equals(info.getName())) {
+        if ("Windows".equals(info.getName())) {
           javax.swing.UIManager.setLookAndFeel(info.getClassName());
           break;
         }

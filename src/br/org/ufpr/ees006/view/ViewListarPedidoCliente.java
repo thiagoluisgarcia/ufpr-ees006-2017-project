@@ -17,7 +17,7 @@ import javax.swing.table.TableModel;
  *
  * @author Thiago Luis Garcia
  */
-public class ViewListarPedidoCliente extends javax.swing.JFrame {
+public class ViewListarPedidoCliente extends javax.swing.JDialog {
 
   private ModelPedidoCliente modelPedidoCliente;
   private ModelItemPedido modelItemPedido;

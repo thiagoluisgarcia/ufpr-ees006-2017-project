@@ -18,7 +18,7 @@ import javax.swing.table.TableModel;
  *
  * @author Thiago Luis Garcia
  */
-public class ViewProduto extends javax.swing.JFrame {
+public class ViewProduto extends javax.swing.JDialog {
 
   private ModelProdutoTable modelProduto;
   private int clickedLine = -1;

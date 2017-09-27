@@ -18,7 +18,7 @@ import javax.swing.table.TableModel;
  *
  * @author Thiago Luis Garcia
  */
-public class ViewCliente extends javax.swing.JFrame {
+public class ViewCliente extends javax.swing.JDialog {
 
   
   private ModelClienteTable modelCliente;
@@ -54,7 +54,7 @@ public class ViewCliente extends javax.swing.JFrame {
     jScrollPane = new javax.swing.JScrollPane(tableCliente);
     tableCliente = new javax.swing.JTable();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     setTitle("Manter Cliente");
     setMaximumSize(new java.awt.Dimension(620, 408));
     setMinimumSize(new java.awt.Dimension(620, 408));
