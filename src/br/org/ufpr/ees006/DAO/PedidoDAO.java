@@ -32,7 +32,7 @@ public class PedidoDAO {
 
       this.connection = ConnectionFactory.getConnection();
       this.prepStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
-
+      
       this.prepStatement.setInt(1, pedido.getId());
       this.prepStatement.setDate(2, (Date) pedido.getData());
       this.prepStatement.setInt(3, pedido.getCliente().getId());

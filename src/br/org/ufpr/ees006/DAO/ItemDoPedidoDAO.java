@@ -31,14 +31,14 @@ public class ItemDoPedidoDAO {
   private PreparedStatement prepStatement = null;
   private ResultSet resultSet = null;
   
-  public void insert(ItemDoPedido item) {
+  public void insert(Pedido pedido, ItemDoPedido item) {
     
     try {
 
       this.connection = ConnectionFactory.getConnection();
       this.prepStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
 
-      this.prepStatement.setInt(1, 1);
+      this.prepStatement.setInt(1, pedido.getId());
       this.prepStatement.setInt(2, item.getProduto().getId());
       this.prepStatement.setInt(3, item.getQtdade());
 

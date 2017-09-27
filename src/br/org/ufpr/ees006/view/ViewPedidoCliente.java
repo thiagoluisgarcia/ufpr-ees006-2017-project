@@ -6,6 +6,7 @@
 package br.org.ufpr.ees006.view;
 
 import br.org.ufpr.ees006.DAO.ClienteDAO;
+import br.org.ufpr.ees006.DAO.ItemDoPedidoDAO;
 import br.org.ufpr.ees006.DAO.PedidoDAO;
 import br.org.ufpr.ees006.DAO.ProdutoDAO;
 import br.org.ufpr.ees006.foundation.Cliente;
@@ -316,15 +317,25 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
       
       cliente = clienteDAO.getCliente(fieldCpf.getText());
 
+      pedido.setId(pedidoDAO.getMax());
       pedido.setCliente(cliente);
       pedido.setData(date);
       
       pedidoDAO.insert(pedido);
             
       itens = modelItemPedido.getItens();
+
+      for (int i = 0; i < itens.size(); i++) {
+
+        ItemDoPedido item = modelItemPedido.getItem(i);
+        ItemDoPedidoDAO itemDAO = new ItemDoPedidoDAO();
+        itemDAO.insert(pedido, item);
+        this.modelItemPedido.delete(i);
+        
+      }
       
-      
-      clienteDAO.insert(cliente);
+      JOptionPane.showMessageDialog(null, "Pedido " + pedido.getId() + " criado com sucesso.", "Sucesso", JOptionPane.INFORMATION_MESSAGE);
+      this.fieldCpf.setText("");
 
     } catch (Exception ex) {
 
