@@ -76,6 +76,8 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
     btAdicionar = new javax.swing.JButton();
     btRemover = new javax.swing.JButton();
     btGravar = new javax.swing.JButton();
+    btSomar = new javax.swing.JButton();
+    btSubtrair = new javax.swing.JButton();
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Manter Pedido");
@@ -110,11 +112,6 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
         tableItensMouseClicked(evt);
       }
     });
-    tableItens.addKeyListener(new java.awt.event.KeyAdapter() {
-      public void keyPressed(java.awt.event.KeyEvent evt) {
-        tableItensKeyPressed(evt);
-      }
-    });
     jScrollPane2.setViewportView(tableItens);
 
     jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -136,6 +133,20 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
 
     btGravar.setText("Gravar");
 
+    btSomar.setText("+");
+    btSomar.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btSomarActionPerformed(evt);
+      }
+    });
+
+    btSubtrair.setText("-");
+    btSubtrair.addActionListener(new java.awt.event.ActionListener() {
+      public void actionPerformed(java.awt.event.ActionEvent evt) {
+        btSubtrairActionPerformed(evt);
+      }
+    });
+
     javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
     getContentPane().setLayout(layout);
     layout.setHorizontalGroup(
@@ -144,28 +155,34 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
         .addContainerGap()
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel1)
+            .addComponent(jLabel1)
+            .addContainerGap(578, Short.MAX_VALUE))
+          .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
               .addGroup(layout.createSequentialGroup()
                 .addComponent(jLabel3)
                 .addGap(23, 23, 23)
-                .addComponent(fieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)))
-            .addContainerGap(369, Short.MAX_VALUE))
-          .addGroup(layout.createSequentialGroup()
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel2)
+                .addComponent(fieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
               .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel2)
+                  .addGroup(layout.createSequentialGroup()
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(18, 18, 18)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                      .addComponent(btAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                      .addComponent(btRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                  .addComponent(btAdicionar, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
-                  .addComponent(btRemover, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-            .addGap(18, 18, 18)
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-              .addComponent(jLabel4)
-              .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(23, 23, 23))))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addGroup(layout.createSequentialGroup()
+                    .addComponent(jLabel4)
+                    .addGap(87, 87, 87)
+                    .addComponent(btSomar)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(btSubtrair, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                  .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))))
+            .addGap(23, 23, 23))))
       .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         .addComponent(btGravar)
@@ -174,20 +191,25 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
     layout.setVerticalGroup(
       layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
       .addGroup(layout.createSequentialGroup()
-        .addContainerGap()
-        .addComponent(jLabel1)
-        .addGap(18, 18, 18)
-        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-          .addComponent(jLabel3)
-          .addComponent(fieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        .addGap(20, 20, 20)
         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
           .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jLabel1)
+            .addGap(18, 18, 18)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+              .addComponent(jLabel3)
+              .addComponent(fieldCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGap(20, 20, 20)
             .addComponent(jLabel2)
             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE))
           .addGroup(layout.createSequentialGroup()
-            .addComponent(jLabel4)
+            .addGap(74, 74, 74)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+              .addComponent(jLabel4)
+              .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(btSubtrair)
+                .addComponent(btSomar)))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
               .addGroup(layout.createSequentialGroup()
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -235,16 +257,41 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
     clickedLineItem = tableItens.rowAtPoint(evt.getPoint());
   }//GEN-LAST:event_tableItensMouseClicked
 
-  private void tableItensKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tableItensKeyPressed
+  private void btSomarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSomarActionPerformed
+    
     if ( clickedLineItem != -1 ) {
       
-      ItemDoPedido item = new ItemDoPedido();
+      ItemDoPedido item;
       item = modelItemPedido.getItem(clickedLineItem);
-      item.setQtdade( (Integer)modelItemPedido.getValueAt(clickedLineItem, 1));
-      modelItemPedido.setValue(item);
-      modelItemPedido.fireTableCellUpdated(clickedLineItem, 1);
+      int quantidade = item.getQtdade();
+      quantidade++;
+      item.setQtdade(quantidade);
+      modelItemPedido.setValueAt(item, clickedLineItem, 1);
+      clickedLineItem = -1;
+      
     }
-  }//GEN-LAST:event_tableItensKeyPressed
+    
+  }//GEN-LAST:event_btSomarActionPerformed
+
+  private void btSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btSubtrairActionPerformed
+    
+    if ( clickedLineItem != -1 ) {
+      
+      ItemDoPedido item;
+      item = modelItemPedido.getItem(clickedLineItem);
+      int quantidade = item.getQtdade();
+      quantidade--;
+      if (quantidade <= 0 ) {
+        modelItemPedido.delete(clickedLineItem);
+      } else {
+        item.setQtdade(quantidade);
+        modelItemPedido.setValueAt(item, clickedLineItem, 1);
+      }
+      clickedLineItem = -1;
+      
+    }
+    
+  }//GEN-LAST:event_btSubtrairActionPerformed
 
   /**
    * @param args the command line arguments
@@ -285,6 +332,8 @@ public class ViewPedidoCliente extends javax.swing.JFrame {
   private javax.swing.JButton btAdicionar;
   private javax.swing.JButton btGravar;
   private javax.swing.JButton btRemover;
+  private javax.swing.JButton btSomar;
+  private javax.swing.JButton btSubtrair;
   private javax.swing.JTextField fieldCpf;
   private javax.swing.JLabel jLabel1;
   private javax.swing.JLabel jLabel2;

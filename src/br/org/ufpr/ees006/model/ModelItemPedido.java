@@ -18,30 +18,26 @@ public class ModelItemPedido extends AbstractTableModel{
   
   private final String[] colunas;
   private List<ItemDoPedido> lista = new ArrayList();
-  private boolean trueOrFalse;
 
   public ModelItemPedido(List<ItemDoPedido> lista) {
     this.colunas = new String[]{"Produto", "Quantidade"};
-    this.trueOrFalse = false;
     this.lista = lista;
   }
   
   public ModelItemPedido() {
     this.colunas = new String[]{"Produto", "Quantidade"};
-    this.trueOrFalse = true;
   }
   
   @Override
   public boolean isCellEditable(int row, int col) {
-     switch (col) {
-         case 0:
-           return false;
-         case 1:
-             return this.trueOrFalse;
-         default:
-             return false;
-      }
-}
+    return false;
+  }
+  
+  @Override
+  public void setValueAt(Object item, int rowIndex, int columnIndex) {
+    this.lista.set(rowIndex, (ItemDoPedido) item);
+    this.fireTableDataChanged(); 
+  }
   
   @Override
   public int getRowCount() {
