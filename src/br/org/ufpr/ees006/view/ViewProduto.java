@@ -43,7 +43,7 @@ public class ViewProduto extends javax.swing.JDialog {
     jScrollPane = new javax.swing.JScrollPane(tableProduto);
     tableProduto = new javax.swing.JTable();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     setTitle("Manter Produto");
     setMinimumSize(new java.awt.Dimension(620, 408));
     setPreferredSize(new java.awt.Dimension(620, 408));

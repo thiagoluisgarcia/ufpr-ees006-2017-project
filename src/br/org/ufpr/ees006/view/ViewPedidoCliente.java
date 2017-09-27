@@ -85,9 +85,11 @@ public class ViewPedidoCliente extends javax.swing.JDialog {
     btSomar = new javax.swing.JButton();
     btSubtrair = new javax.swing.JButton();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     setTitle("Manter Pedido");
+    setMaximumSize(new java.awt.Dimension(620, 408));
     setMinimumSize(new java.awt.Dimension(620, 408));
+    setPreferredSize(new java.awt.Dimension(620, 408));
     setResizable(false);
 
     jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

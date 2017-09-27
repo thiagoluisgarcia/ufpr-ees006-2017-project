@@ -49,7 +49,7 @@ public class ViewListarPedidoCliente extends javax.swing.JDialog {
     jLabel2 = new javax.swing.JLabel();
     jLabel4 = new javax.swing.JLabel();
 
-    setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+    setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     setTitle("Pedidos do Cliente");
     setMinimumSize(new java.awt.Dimension(620, 408));
     setResizable(false);
