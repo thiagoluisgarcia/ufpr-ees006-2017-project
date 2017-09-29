@@ -16,6 +16,8 @@ import br.org.ufpr.ees006.foundation.Produto;
 import br.org.ufpr.ees006.model.ModelItemPedido;
 import br.org.ufpr.ees006.model.ModelProdutoTable;
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -321,7 +323,10 @@ public class ViewPedidoCliente extends javax.swing.JDialog {
 
       pedido.setId(pedidoDAO.getMax());
       pedido.setCliente(cliente);
-      pedido.setData(date);
+      
+      DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+      Date myDate = formatter.parse(date);
+      pedido.setData(myDate);
       
       pedidoDAO.insert(pedido);
             
