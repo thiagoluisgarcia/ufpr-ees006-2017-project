@@ -173,7 +173,7 @@ public class ClienteDAO {
 
   public void delete(Cliente cliente) throws SQLException {
 
-    if (!hasAnyOrder()) {
+    if (!hasAnyOrder(cliente)) {
 
       try {
 
@@ -231,14 +231,15 @@ public class ClienteDAO {
 
   }
 
-  private boolean hasAnyOrder() throws SQLException {
+  private boolean hasAnyOrder(Cliente cliente) throws SQLException {
 
     boolean result = false;
 
     try {
 
       this.connection = ConnectionFactory.getConnection();
-      this.prepStatement = this.connection.prepareStatement(existOrder);
+      this.prepStatement = this.connection.prepareStatement(existOrder, Statement.RETURN_GENERATED_KEYS);
+      this.prepStatement.setInt(1, cliente.getId());
       this.resultSet = this.prepStatement.executeQuery();
 
       if (this.resultSet.first()) {

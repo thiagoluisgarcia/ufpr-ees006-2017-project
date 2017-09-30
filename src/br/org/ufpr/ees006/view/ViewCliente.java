@@ -307,8 +307,9 @@ public class ViewCliente extends javax.swing.JDialog {
       listarCliente();
 
     } catch (Exception ex) {
-      JOptionPane.showMessageDialog(null, "Erro ao realizar exclusão de Cliente", "Erro", JOptionPane.ERROR_MESSAGE);
+      JOptionPane.showMessageDialog(null, "Erro ao realizar exclusão de Cliente. " + ex.getMessage(), "Erro", JOptionPane.ERROR_MESSAGE);
     }
+
   }//GEN-LAST:event_btExcluirActionPerformed
 
   private void listarCliente() {

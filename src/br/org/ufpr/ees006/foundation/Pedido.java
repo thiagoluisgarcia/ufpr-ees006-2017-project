@@ -55,8 +55,4 @@ public class Pedido {
       this.itens = itens;
   }
 
-  public void setString(String string) {
-    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-  }
-  
 }

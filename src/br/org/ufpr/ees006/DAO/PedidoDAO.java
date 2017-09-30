@@ -80,8 +80,12 @@ public class PedidoDAO {
         Pedido pedido = new Pedido();
       
         pedido.setId(this.resultSet.getInt(1));
-        pedido.setString(this.resultSet.getString(2));
-        pedido.setCliente(clienteDAO.getCliente(cpf));
+        pedido.setData(this.resultSet.getString(2));
+        
+        Cliente cliente = new Cliente();
+        cliente = clienteDAO.getCliente(cpf);
+        
+        pedido.setCliente(cliente);
         
         ItemDoPedidoDAO itemDAO = new ItemDoPedidoDAO();
         itemDAO.getList(pedido.getId());

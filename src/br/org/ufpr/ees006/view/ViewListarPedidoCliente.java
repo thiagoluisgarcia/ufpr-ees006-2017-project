@@ -148,6 +148,11 @@ public class ViewListarPedidoCliente extends javax.swing.JDialog {
       List<Pedido> listPedido;
       listPedido = pedidoDAO.getList(fieldCpf.getText());
       modelPedidoCliente.setListPedidos(listPedido);
+      
+      int rows = modelItemPedido.getRowCount(); 
+      for(int i = rows - 1; i >=0; i--) {
+         modelItemPedido.delete(i);
+      }
 
     } catch (Exception ex) {
 
@@ -163,10 +168,10 @@ public class ViewListarPedidoCliente extends javax.swing.JDialog {
 
   private void tablePedidoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablePedidoMouseClicked
     
+    clickedPedido = tablePedido.rowAtPoint(evt.getPoint());
+    
     if ( clickedPedido != -1 ) {
     
-      clickedPedido = tablePedido.rowAtPoint(evt.getPoint());
-
       Pedido pedido = modelPedidoCliente.getPedido(clickedPedido);
 
       listarItens(pedido);
