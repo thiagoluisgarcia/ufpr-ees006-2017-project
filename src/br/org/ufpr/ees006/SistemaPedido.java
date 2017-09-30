@@ -1,3 +1,5 @@
+package br.org.ufpr.ees006;
+
 
 import br.org.ufpr.ees006.view.ViewCliente;
 import br.org.ufpr.ees006.view.ViewListarPedidoCliente;
@@ -47,9 +49,7 @@ public class SistemaPedido extends javax.swing.JFrame {
 
     setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
     setTitle("Sistema de Pedidos");
-    setMaximumSize(new java.awt.Dimension(620, 408));
     setMinimumSize(new java.awt.Dimension(620, 408));
-    setPreferredSize(new java.awt.Dimension(620, 408));
     setResizable(false);
 
     jMenu1.setText("Cadastro");
