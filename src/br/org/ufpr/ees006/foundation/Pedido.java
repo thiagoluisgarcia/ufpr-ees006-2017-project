@@ -10,11 +10,11 @@ import java.util.List;
 public class Pedido {
 
   private int id;
-  private Date data;
+  private String data;
   private Cliente cliente;
   private List<ItemDoPedido> itens;
   
-  public Pedido(int id, Date data) {
+  public Pedido(int id, String data) {
     super();
     this.id = id;
     this.data = data;
@@ -31,11 +31,11 @@ public class Pedido {
     this.id = id;
   }
 
-  public Date getData() {
+  public String getData() {
     return this.data;
   }
 
-  public void setData(Date data) {
+  public void setData(String data) {
     this.data = data;
   }
   
@@ -53,6 +53,10 @@ public class Pedido {
   
   public void setItens(List<ItemDoPedido> itens) {
       this.itens = itens;
+  }
+
+  public void setString(String string) {
+    throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
   }
   
 }

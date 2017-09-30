@@ -34,7 +34,7 @@ public class PedidoDAO {
       this.prepStatement = connection.prepareStatement(insert, Statement.RETURN_GENERATED_KEYS);
       
       this.prepStatement.setInt(1, pedido.getId());
-      this.prepStatement.setDate(2, (Date) pedido.getData());
+      this.prepStatement.setString(2, pedido.getData());
       this.prepStatement.setInt(3, pedido.getCliente().getId());
 
       this.prepStatement.execute();
@@ -80,7 +80,7 @@ public class PedidoDAO {
         Pedido pedido = new Pedido();
       
         pedido.setId(this.resultSet.getInt(1));
-        pedido.setData(this.resultSet.getDate(2));
+        pedido.setString(this.resultSet.getString(2));
         pedido.setCliente(clienteDAO.getCliente(cpf));
         
         ItemDoPedidoDAO itemDAO = new ItemDoPedidoDAO();
