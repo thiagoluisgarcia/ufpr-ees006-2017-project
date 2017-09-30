@@ -328,7 +328,6 @@ public class ViewPedidoCliente extends javax.swing.JDialog {
 
   private void btGravarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btGravarActionPerformed
 
-    Date date = new Date();
     ClienteDAO clienteDAO = new ClienteDAO();
     Cliente cliente;
     Pedido pedido = new Pedido();
@@ -342,9 +341,7 @@ public class ViewPedidoCliente extends javax.swing.JDialog {
       pedido.setId(pedidoDAO.getMax());
       pedido.setCliente(cliente);
       
-      DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-      Date myDate = formatter.parse(date);
-      pedido.setData(myDate);
+      pedido.setData(dtPedido.getText());
       
       pedidoDAO.insert(pedido);
             
